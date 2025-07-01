@@ -1,6 +1,6 @@
-# 🍍 Fruit API — Spring Boot + MySQL
+# 🍍 Fruit API — Spring Boot + Mongo
 
-A simple RESTful API to manage fruits using Spring Boot, JPA, MySQL and validation via DTOs.
+A simple RESTful API to manage fruits using Spring Boot, JPA, Mongo and validation via DTOs.
 
 ---
 
@@ -8,7 +8,7 @@ A simple RESTful API to manage fruits using Spring Boot, JPA, MySQL and validati
 
 - Full CRUD operations (`POST`, `GET`, `PUT`, `DELETE`)  
 - Validated input with DTOs (`FruitRequest`)  
-- Persistence via MySQL database  
+- Persistence via Mongo database  
 - Auto table generation with JPA/Hibernate  
 - Clean architecture with model, service, repository, controller layers
 
@@ -19,7 +19,7 @@ A simple RESTful API to manage fruits using Spring Boot, JPA, MySQL and validati
 - Java
 - Spring Boot 3  
 - Spring Data JPA  
-- MySQL  
+- Mongo  
 - Jakarta Bean Validation  
 - Maven
 
@@ -27,38 +27,22 @@ A simple RESTful API to manage fruits using Spring Boot, JPA, MySQL and validati
 
 ## ⚙️ Getting Started
 
-### 1. Clone the repo: https://github.com/ToniR90/4.2-API-REST-SpringBoot-Nivell2.git
+### 1. Clone the repo: https://github.com/ToniR90/4.2-API-REST-SpringBoot-Nivell3.git
 
 
-### 2. Configure your database
+### 2. Run MongoDB locally
 
-Create the database manually in MySQL: 
+Ensure MongoDB is running on your machine at `localhost:27017`
+
+- If installed locally:
+
 
 ```bash
-CREATE DATABASE fruit_db;
+mongod
 ```
 
 
-### 3. Set up application properties
-
-Copy the sample config file:
-
-```bash
-cp src/main/resources/application-example.properties src/main/resources/application.properties
-```
-
-Then fill in your real MySQL username and password in the new file:
-
-```
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
-
-
-🛑 Do not commit your real application.properties!
-It's excluded via .gitignore to avoid leaking credentials.
-
-🛠️ Running the app
+### 🛠️ 4. Running the app
 mvn spring-boot:run
 
 ---
@@ -78,20 +62,20 @@ Errors will return HTTP 400 with helpful messages.
 ---
 
 📝 Notes
-- The real application.properties is ignored by Git (.gitignore)
-- Please use application-example.properties to replicate configuration
-- Hibernate auto-generates the fruits table upon app startup
+- _MongoDB will automatically create the fruit_db database and fruits collection on first insertion_
+- Mongo uses ObjectIds (_id) as document identifiers by default
+
 
 ---
 
 ## 🌐 Usefull resources
 
-### _*Beginner's CRUD guide Spring + MySQL*_
+### _*Beginner's CRUD guide Spring + Mongo*_
 
-https://dev.to/abhi9720/a-beginners-guide-to-crud-operations-of-rest-api-in-spring-boot-mysql-5hcl
+https://www.geeksforgeeks.org/spring-boot-crud-operations-using-mongodb/
 
 
-https://www.youtube.com/watch?v=1BYxZCFjfyU
+https://itacademy.barcelonactiva.cat/mod/assign/view.php?id=13411
 
 
 
