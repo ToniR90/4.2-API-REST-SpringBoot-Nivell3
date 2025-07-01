@@ -57,6 +57,7 @@ The app will be available at:
 The FruitRequest DTO includes:
 - @NotBlank for name
 - @NotNull and @Min(1) for quantity
+  
 Errors will return HTTP 400 with helpful messages.
 
 ---
